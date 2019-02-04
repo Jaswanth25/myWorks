@@ -1,0 +1,156 @@
+
+body{
+	background-image: url("./images/Background.jpg");
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+  	overflow: hidden;
+  	position: relative;
+  	-webkit-filter: contrast(125%); /* Safari 6.0 - 9.0 */
+  	filter: contrast(150%);
+  	color: white;
+}
+.body{
+	width: 100vw;
+	height: 100vh;
+}
+.messageLine{
+    font-family: 'Merriweather', serif;
+    float: left;
+	width: 48vw;
+	height: 100vh;
+}
+.sentence1{
+	position: relative;
+	font-size: 35px; 
+	height: 15vh;
+	animation : movement1 1s ease-in-out 1;
+	animation-fill-mode: both;
+}
+.movement:hover{
+	animation: movement4 1s ease-in-out infinite;
+	animation-direction: alternate;
+	animation-fill-mode: both;
+}
+@keyframes movement4{
+	from{
+		padding-left: 0px;
+	}
+	50%{
+		padding-top: 2vh;
+	}
+	100%{
+		padding-left: 2vw;
+	}
+}
+@keyframes movement1{
+	from{
+		color: #acc169 ;
+		margin-top: 0px;
+		margin-left:0px;
+	}	
+	to{
+		color: #dd762f  ;
+		margin-top: 13vw;
+		margin-left: 13vw;
+	}
+}
+
+.sentence2{
+	font-size: 25px;
+	height: 15vh;
+	position: relative;
+	animation:movement2 1s ease-in-out 1;
+	animation-delay: 1s;
+	animation-fill-mode: both;
+}
+
+@keyframes movement2{
+	from{
+		color:  #c16970 ;
+		visibility: hidden;
+	}
+	to{
+		visibility: visible;
+		color:  #eaeded  ;
+		margin-top: 1vh;
+		margin-left:20vw;
+	}
+}
+
+.sentence3{
+	font-size: 35px;
+	height: 15vh;
+	position: relative;
+	animation:movement3 1s ease-out 1;
+	animation-delay: 2s;
+	animation-fill-mode: both;
+}
+@keyframes movement3{
+	from{
+		color:  #2980b9  ;
+		visibility: hidden;
+	}
+	to{
+		visibility: visible;
+		color: #69c1a6  ;
+		margin-top:1vh;
+		margin-left:10vw;
+	}
+}
+.divider_div{
+	width: 2%;
+	height: 100%;
+	float: left;
+	display: inline-block;
+}
+.divider{
+	width: 20%;
+	height: 50%;
+	padding: 0;
+	margin:auto;
+	margin-top: 25vh;
+	background-color: black;
+}
+
+.signup_right_half{
+	width: 50%;
+	height: 100%;
+	float: left;
+	justify-content: center;
+}
+.signup_content{
+	width: 50%;
+	height: 80%;
+	margin:10vh auto;
+}
+.signup_input{
+	width:100%;
+	height: 6vh;
+	margin-top: 5vh;
+	background: transparent;
+	padding-left: 7px;
+	border-radius: 5px;
+	color: white;
+}
+.signup_input:hover{
+	border-color: #419977;
+}
+
+.signup_button{
+	width:100%;
+	height: 7vh;
+	margin-top: 7vh;
+	margin-left: 5px;
+	background-color: #38715b;
+	border-radius: 5px;
+	color:white;
+	padding-left: 7px;
+}
+.signup_button:hover{
+	background-color: #419977;
+}
+.signup_bottom{
+	width: 100%;
+	margin-top: 3vh;
+	height: 5vh;	
+}
