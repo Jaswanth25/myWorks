@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Colleges List</title>
+	<link rel="stylesheet" href="./collegeListMultiple.css" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<div class="backImage"></div>
+	<div>
+		<input type="text" id="searchText" placeholder="search..." ng-model="collegeName"/>
+		<div id="googleTranslateElement"></div>
+	</div>
+	<div class="tableDiv">
+		<table>
+			<th class="header">
+				<tr>
+					<td><b>Name</b></td>
+					<td><b>Country</b></td>
+					<td><b>Domain</b></td>
+				</tr>
+			</th>
+				<tr ng-repeat="x in list | filter : collegeName">
+					<td><a href={{x.web_pages[0]}}>{{x.name}}</a></td>
+					<td>{{x.country}}</td>
+					<td>{{x.domains[0]}}</td>
+				</tr>
+		</table>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript">
+		var app=angular.module("myApp",[]);
+		app.controller('myCtrl',function($scope,$http){
+			$scope.apiLink="https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json";
+			$http.get($scope.apiLink).then(function(response){
+				$scope.list=response.data;
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		function googleTranslate(){
+			new google.translate.TranslateElement({pageLanguage:'en',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'googleTranslateElement');
+		}
+	</script>
+	<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslate">
+		
+	</script>
+</body>
+</html>
